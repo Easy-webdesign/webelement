@@ -1,0 +1,45 @@
+//Стили для заголовков
+
+.title{
+    position: relative;
+    display: inline-block;
+    padding-top: 3px;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 0.9px;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+
+    &:before{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 3px;
+        height: 23px;
+        top: 50%;
+        left: -17px;
+        background: $title-line-color;
+        transform: translateY(-50%);
+    }
+    &:after{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 3px;
+        height: 23px;
+        top: 50%;
+        right: -17px;
+        background: $title-line-color;
+        transform: translateY(-50%);
+    }
+}
+
+@media(max-width: 588px){
+    .title{
+        font-size: 23px;
+        &::before, &::after{
+            display: none;
+        }
+    }
+}

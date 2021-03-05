@@ -1,0 +1,235 @@
+//Стили для ПОДВАЛА
+
+.footer{
+    background: #f8f8f8;
+
+    &__box{
+        display: flex;
+        justify-content: space-between;
+        padding: 27px 15px 46px;
+
+        &-1{
+            width: 14%;
+        }
+
+        &-2{
+            width: 75%;
+        }
+
+        &-map{
+            width: 100%;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &-nums, &-address{
+            margin-top: 45px;
+            .header-num{
+                text-align: left;
+                padding-left: 24px;
+                margin-top: 5px;
+                margin-left: 0;
+
+                &:nth-child(1){
+                    padding-left: 0;
+                    margin-top: 0;
+                }
+            }
+        }
+
+        &-address{
+            .header-num{
+                align-items: flex-start;
+                a{
+                    text-align: left;
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        &__links{
+            &-1{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 66px;
+                width: 100%;
+                li{
+                    a{
+                        font-size: 14px;
+                        font-style: normal;
+                        letter-spacing: 1.82px;
+                        text-transform: uppercase;
+                        color: #000000;
+
+                        &.red{
+                            color: #c62831;
+                        }
+                    }
+                }
+            }
+
+            &-2{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 45px;
+
+                &-section{
+                    li{
+                        padding-left: 5px;
+                        margin-top: 5px;
+                        a{
+                            font-size: 13px;
+                            font-weight: 300;
+                            font-style: normal;
+                            letter-spacing: 0.65px;
+                            color: #848484;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.copywrite{
+    height: 50px;
+    &__box{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 400;
+        color: #555555;
+    }
+}
+
+//Стили для ПОДВАЛА с шириной экрана 1440px и ниже
+
+@media(max-width: 1440px){
+    .footer{
+        &__box{
+            &-1{
+                width: 17%;
+            }
+
+            &-2{
+                width: 78%;
+            }
+
+            &__links{
+                &-1{
+                    li{
+                        a{
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Стили для ПОДВАЛА с шириной экрана 1092px и ниже
+
+@media(max-width: 1092px){
+    .footer{
+        &__box{
+            flex-direction: column;
+
+            & > *{
+                width: 100%;
+            }
+
+            &-1{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                & > *{
+                    margin-top: 10px;
+                }
+            }
+
+            &-nums{
+                display: flex;
+                order: 3;
+
+                .header-num{
+                    margin-top: 0;
+                }
+
+                img{
+                    display: none;
+                }
+            }
+
+            &-2{
+                display: none;
+            }
+        }
+    }
+
+    .copywrite{
+        &__box{
+            font-size: 11px;
+        }
+    }
+}
+
+//Стили для ПОДВАЛА с шириной экрана 768px и ниже
+
+@media(max-width: 768px){
+
+    .copywrite{
+        &__box{
+            &__item{
+                &:nth-child(2){
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+//Стили для ПОДВАЛА с шириной экрана 588px и ниже
+
+@media(max-width: 588px){
+    .footer{
+        &__box{
+            &-nums{
+                flex-direction: column;
+
+                .header-num{
+                    padding: 0;
+                }
+            }
+
+            &-address{
+                width: 260px;
+                .header-num{
+                    padding: 0;
+
+                    a{
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .copywrite{
+        &__box{
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: center;
+
+            &__item{
+                margin: 5px 0;
+            }
+        }
+    }
+}

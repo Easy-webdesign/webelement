@@ -1,0 +1,260 @@
+//Стили для блока ФОРМА
+
+.form{
+    padding: 45px 0 0;
+    background: #fff;
+    &__box{
+        min-height: 250px;
+        margin: 0 auto;
+        
+        padding: 55px 100px;
+        background: radial-gradient(circle, #385382 0%, #223251  100%);
+        
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            input, textarea{
+                position: relative;
+                width: 370px;
+                height: 51px;
+                padding: 0 19px;
+                border: solid 1px #ffffff;
+                background: none;
+                transition: .2s all;
+                
+
+                font-size: 16px;
+                font-weight: normal;
+                line-height: 1.88;
+                letter-spacing: 0.08px;
+                text-align: left;
+                color: #ffffff;
+
+                &::placeholder{
+                    font-size: 16px;
+                    font-weight: normal;
+                    line-height: 1.88;
+                    letter-spacing: 0.08px;
+                    text-align: left;
+                    color: #ffffff;
+                }
+
+                &:focus{
+                    box-shadow: inset 0 0 5px #fff, 0 0 5px #fff;
+                }
+            }
+
+
+            label{
+                width: 370px;
+            }
+
+            textarea{
+                height: 100px;
+                padding-top: 10px;
+                resize: none;
+            }
+
+            input[type='file'], input[type='checkbox']{
+                display: none;
+                border: none;
+                box-shadow: none;
+
+                &:focus{
+                    box-shadow: none;
+                }
+            }
+        }
+
+
+        .checkbox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+
+            span{
+                position: relative;
+                display: block;
+                width: 16px;
+                height: 16px;
+                margin-right: 7px;
+                border: solid 1px #c2242d;
+
+                &.valid{
+                    border: solid 1px #ffffff;
+                }
+
+                &::before{
+                    content: '';
+                    position: absolute;
+                    display: none;
+                    width: 10px;
+                    height: 6px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: url('../icons/form/check.png') center center/cover no-repeat;
+                }
+            }
+
+            input:checked + span{
+                &::before{
+                    display: block;
+                }
+            }
+
+            
+
+            p, a{
+                font-size: 13px;
+                font-weight: 300;
+                line-height: 2.31;
+                letter-spacing: 0.13px;
+                color: #ffffff;
+            }
+
+            a{
+                text-decoration: underline;
+            }
+        }
+
+        &__item{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 30px;
+            p{
+                width: 242px;
+                font-size: 11px;
+                line-height: 1.36;
+                letter-spacing: 0.55px;
+                text-align: left;
+                text-transform: uppercase;
+                color: #ffffff;
+            }
+
+            &-button{
+                width: 184px;
+                height: 51px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 16px;
+                font-weight: normal;
+                letter-spacing: 0.08px;
+                color: #ffffff;
+                border: 1px dashed #fff;
+                cursor: pointer;
+            }
+
+            &:nth-child(3){
+                align-items: flex-start;
+            }
+        }
+
+        .error-message{
+            position: absolute;
+            bottom: -25px;
+            color: #c2242d;
+            left: 47%;
+
+            &.hide{
+                display: none;
+            }
+        }
+    }
+}
+
+//Стили для блока ФОРМА с шириной экрана 1440px и ниже
+
+@media(max-width: 1440px){
+    .form{
+        &__box{
+            padding: 55px;
+
+            .error-message{
+                left: 42%;
+            }
+        }
+    }
+}
+
+//Стили для блока ФОРМА с шириной экрана 1092px и ниже
+
+@media(max-width: 1092px){
+    .form{
+        &__box{
+
+            .error-message{
+                left: 44%;
+            }
+        }
+    }
+}
+
+//Стили для блока ФОРМА с шириной экрана 768px и ниже
+
+@media(max-width: 768px){
+    .form{
+        &__box{
+            form{
+                input, textarea, label{
+                    width: 210px;
+                }
+            }
+
+            .checkbox{
+                width: 360px;
+            }
+
+            .error-message{
+                left: 57%;
+            }
+        }
+    }
+}
+
+//Стили для блока ФОРМА с шириной экрана 588px и ниже
+
+@media(max-width: 588px){
+    .form{
+        &__box{
+            .checkbox{
+                width: 290px;
+            }
+            form{
+                input, textarea{
+                    width: 290px;
+                }
+
+                label{
+                    width: 290px;
+                }
+            }
+            &__item{
+                flex-direction: column;
+
+                p{
+                    width: 290px;
+                    margin-bottom: 10px;
+                }
+
+                &:nth-child(3){
+                    align-items: center;
+                }
+            }
+
+            .error-message{
+                left: 50%;
+                transform: translateX(-146px);
+            }
+        }
+    }
+}

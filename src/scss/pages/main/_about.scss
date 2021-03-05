@@ -1,0 +1,171 @@
+//Стили для блока О ФАБРИКЕ
+
+.about{
+    position: relative;
+    padding: 98px 0 47px;
+    background: #fff;
+
+
+    &__box{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
+
+        &__content{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 95px;
+            padding: $item-padding;
+
+            & > *{
+                width: 48%;
+            }
+
+            &-img{
+                height: 355px;
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &-text{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        &-bg{
+            position: absolute;
+            width: 100%;
+            height: 230px;
+            top: 0;
+            left: 0;
+            background: #f8f8f8;
+            z-index: -1;
+        }
+    }
+
+    &-title{
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.33;
+        letter-spacing: 0.18px;
+        margin-bottom: 75px;
+    }
+    &-descr{
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.5;
+        letter-spacing: 0.4px;
+        margin-bottom: 37px;
+    }
+
+    &-bg{
+        position: absolute;
+        width: 100%;
+        height: 339px;
+        background: url('../img/about/main-BG.png') center center/cover no-repeat;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+}
+
+//Стили для блока О ФАБРИКЕ с шириной экрана 1092px и ниже
+
+@media(max-width: 1092px){
+    .about{
+        padding: 38px 0 0;
+        &__box{
+            &__content{
+                margin-top: 40px;
+                align-items: flex-start;
+                padding: 25px;
+            }
+
+            &-bg{
+                height: 200px;
+            }
+        }
+
+        &-bg{
+            height: 239px;
+        }
+        
+        &-title{
+            margin-bottom: 53px;
+        }
+    }
+}
+
+//Стили для блока О ФАБРИКЕ с шириной экрана 768px и ниже
+
+@media(max-width: 768px){
+    .about{
+        &__box{
+            &__content{
+                flex-direction: column;
+                align-items: center;
+
+                & > *{
+                    width: 100%;
+                }
+
+                &-img{
+                    height: 205px;
+                    margin-bottom: 30px;
+                }
+
+                &-text{
+                    align-items: center;
+                }
+            }
+
+            &-bg{
+                height: 115px;
+                background: #fff;
+            }
+        }
+
+        &-title{
+            margin-bottom: 25px;
+        }
+    }
+}
+
+//Стили для блока О ФАБРИКЕ с шириной экрана 588px и ниже
+
+@media(max-width: 588px){
+    .about{
+        &__box{
+            &__content{
+                margin-top: 50px;
+            }
+        }
+    }
+}
+
+//Стили для блока О ФАБРИКЕ с шириной экрана 480px и ниже
+
+@media(max-width: 480px){
+    .about{
+
+        &__box{
+            padding: 0;
+            &__content{
+                padding: 15px;
+                margin-top: 40px;
+            }
+        }
+        &-bg{
+            height: 229px;
+        }
+    }
+}

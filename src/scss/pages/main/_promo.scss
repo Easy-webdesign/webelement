@@ -1,0 +1,315 @@
+//Стили для первого блока главной страницы
+
+.promo{
+    position: relative;
+    margin: 140px 0 36px;
+    &__box{
+        display: flex;
+        flex-wrap: wrap;
+
+        &__items__block{
+            height: $main-item-height;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &__item{
+            position: relative;
+            width: 100%;
+            height: 290px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            padding: 35px;
+            overflow: hidden;
+
+            &-content{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 0 28px;
+                background: #fff;
+            }
+
+            &-title{
+                font-size: 20px;
+                line-height: 1.4;
+                letter-spacing: 0.7px;
+                margin-bottom: 23px;
+                text-transform: uppercase;
+            }
+
+            &-descr{
+                font-size: 12px;
+                line-height: 1.5;
+                letter-spacing: 2.16px;
+                text-decoration: underline;
+            }
+            
+            img{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+
+            &-container{
+                margin-top: 30px;
+            }
+        }
+    }
+    &__item{
+        position: relative;
+        height: $main-item-height;
+        padding: 35px;
+        overflow: hidden;
+
+        &__content{
+            position: absolute;
+            width: 300px;
+            // height: 346px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            top: 231px;
+            right: 35px;
+            bottom: 35px;
+            padding: 49px 35px 41px;
+            background: #fff;
+        }
+
+        &-title{
+            width: 173px;
+            font-size: 30px;
+            font-weight: 300;
+            line-height: 35px;
+            letter-spacing: 1.05px;
+            text-transform: uppercase;
+            color: #010101;
+        }
+
+        &-descr{
+            font-size: 20px;
+        }
+        
+
+        img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    }
+
+    &-prev, &-next{
+        width: 35px;
+        height: 35px;
+        top: 231px;
+        background-color: #304770;
+
+        &:before{
+            content: '';
+            position: absolute;
+            display: block;
+            width: 8px;
+            height: 14px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: url('../icons/promo/slide-arrow.png') center center/cover no-repeat;
+        }
+    }
+
+    &-next{
+        right: 15px;
+        &:before{
+            transform: rotate(180deg) translate(50%, 50%);
+        }
+    }
+
+    &-prev{
+        left: auto;
+        right: calc(30px + 15px);
+        background: #405986;
+    }
+}
+
+//Стили для первого блока с шириной экрана 1440px и ниже
+
+@media(max-width: 1440px){
+    .promo{
+        &__box{
+            &__item{
+                &-content{
+                    padding: 0 18px;
+                }
+
+                &-title{
+                    font-size: 16px;
+                    margin-bottom: 15px;
+                }
+
+                &-descr{
+                    font-size: 10px;
+                }
+                
+            }
+        }
+
+        &__item{
+            padding: 30px;
+            &__content{
+                right: 30px;
+                top: 280px;
+                bottom: 30px;
+            }
+
+            &-title{
+                width: 210px;
+                font-size: 22px;
+                line-height: 30px;
+            }
+        }
+
+        &-prev, &-next{
+            width: 30px;
+            height: 30px;
+            top: 280px;
+        }
+
+        &-next{
+            right: 15px;
+            &:before{
+                transform: rotate(180deg) translate(50%, 50%);
+            }
+        }
+    
+        &-prev{
+            left: auto;
+            right: calc(30px + 15px);
+            background: #405986;
+        }
+    }
+}
+
+//Стили для первого блока с шириной экрана 1092px и ниже
+
+@media(max-width: 1092px){
+    .promo{
+        margin: 70px 0 15px;
+        &__box{
+            &__item{
+                width: 48%;
+                height: 260px;
+
+                &-container{
+                    display: none;
+                }
+
+                &s__block{
+                    height: auto;
+                    flex-direction: row;
+                    margin-top: 28px;
+                }
+            }
+        }
+        &__item{
+            height: 350px;
+
+            &__content{
+                top: 30px;
+                padding: 39px 35px 41px;
+            }
+        }
+
+        &-next, &-prev{
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+//Стили для первого блока с шириной экрана 768px и ниже
+
+@media(max-width: 768px){
+    .promo{
+        &__box{
+            &__item{
+                padding: 20px;
+            }
+        }
+
+        &__item{
+            height: 300px;
+            
+            &__content{
+                width: 260px;
+                padding: 30px;
+                top: 30px;
+            }
+
+            &-title{
+                width: 100%;
+                font-size: 19px;
+                line-height: 25px;
+            }
+
+            &-descr{
+                font-size: 16px;
+            }
+        }
+
+        &-prev, &-next{
+            top: 30px;
+            transform: translateY(0);
+        }
+    }
+}
+
+//Стили для первого блока с шириной экрана 588px и ниже
+
+@media(max-width: 588px){
+    .promo{
+        &__box{
+            &__items{
+                &__block{
+                    display: none;
+                }
+            }
+        }
+
+        
+    }
+}
+
+//Стили для первого блока с шириной экрана 480px и ниже
+
+@media(max-width: 480px){
+    .promo{
+        &__item{
+            height: 400px;
+            &__content{
+                width: 254px;
+                right: 15px;
+                top: 180px;
+                bottom: 15px;
+            }
+
+            &-descr{
+                display: none;
+            }
+        }
+
+        &-prev, &-next{
+            top: 150px;
+        }
+    }
+}

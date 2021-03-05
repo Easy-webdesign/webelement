@@ -1,0 +1,316 @@
+//Стили для блоков СО СЛАЙДЕРОМ С ТОВАРАМИ
+
+.products{
+    background: #fff;
+    padding: 47px 0 65px;
+
+    &__box{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        &__slider{
+            margin-top: 65px;
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+
+    &__item{
+        position: relative;
+        height: 650px;
+        display: flex;
+        align-items: flex-end;
+        padding: 0 15px 15px;
+        margin-bottom: 50px;
+        &-status{
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.3px;
+            
+
+            .price, .new{
+                width: 70px;
+                height: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            }
+            .price{
+
+                color: #ffffff;
+                background: #c2242d;
+            }
+
+            .new{
+                color: #000;
+                background: #ffffff;
+                box-shadow: 0px 5px 16px 0 rgba(0, 0, 0, 0.14);
+            }
+        }
+        &-img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &-content{
+            width: 100%;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 29px 39px 25px;
+            background: #fff;
+        }
+
+        &-title{
+            font-size: 12px;
+            font-weight: normal;
+            letter-spacing: 2.4px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #9b9b9b;
+        }
+
+        &-articule{
+            font-size: 12px;
+            text-align: center;
+            color: #6b6b6b;
+        }
+
+        &-descr{
+            font-size: 16px;
+            font-weight: normal;
+            letter-spacing: 0.16px;
+            line-height: 1.25;
+            text-align: center;
+            color: #000000;
+        }
+
+        &-price{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: normal;
+            text-align: center;
+            line-height: 22px;
+            color: #b98d0f;
+            .old{
+                position: absolute;
+                left: 0;
+                font-size: 18px;
+                line-height: 1.11;
+                text-decoration: line-through;
+                text-align: center;
+                color: #b8b8b8;
+                margin-right: 20px;
+            }
+            .new{
+                font-size: 24px;
+                font-weight: normal;
+                letter-spacing: normal;
+                text-align: center;
+                line-height: 22px;
+                color: #b98d0f;
+            }
+        }
+
+        .btn{
+            position: absolute;
+            display: none;
+            bottom: -35px;
+            left: 15px;
+            right: 15px;
+        }
+
+        &:hover{
+            .btn{
+                display: flex;
+            }
+        }
+    }
+
+    &-prev, &-next{
+        width: 50px;
+        height: 300px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #888888;
+
+        &::before{
+            content: '';
+            position: absolute;
+            display: block;
+            width: 8px;
+            height: 14px;
+            top: 50%;
+            left: 50%;
+            background: url('../icons/promo/slide-arrow.png') center center/cover no-repeat;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &-prev{
+        left: -$item-padding;
+    }
+
+    &-next{
+        right: -$item-padding;
+
+        &::before{
+            transform: translate(-50%, -50%) rotateZ(180deg);
+        }
+    }
+}
+
+//Стили для блоков СО СЛАЙДЕРОМ С ТОВАРАМИ с шириной экрана 1440px и ниже
+
+@media(max-width: 1440px){
+    .products{
+        &__box{
+            &__slider{
+                margin-top: 45px;
+            }   
+        }
+
+        &__item{
+            &-content{
+                height: 240px;
+                padding: 29px 20px 25px;
+            }
+        }
+    }
+}
+
+//Стили для блоков СО СЛАЙДЕРОМ С ТОВАРАМИ с шириной экрана 1092px и ниже
+
+@media(max-width: 1092px){
+    .products{
+        &__box{
+            margin: 0 auto;
+        }
+
+        &__item{
+            height: 480px;
+
+            &-status{
+                font-size: 9px;
+                font-weight: 400;
+                .price, .new{
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+
+            .btn{
+                display: flex;
+            }
+        }
+    }
+}
+
+//Стили для блоков СО СЛАЙДЕРОМ С ТОВАРАМИ с шириной экрана 768px и ниже
+
+@media(max-width: 768px){
+    .products{
+        &__box{
+            margin: 0 auto;
+        }
+
+        &__item{
+            height: 340px;
+
+            &-price{
+                .old{
+                    font-size: 15px;
+                }
+            }
+
+            &-status{
+                top: 0;
+            }
+
+            &-articule{
+                display: none;
+            }
+
+            &-content{
+                height: 140px;
+                padding: 10px;
+            }
+
+            &-descr{
+                font-size: 14px;
+                line-height: 1.1;
+            }
+            
+            &-img{
+                display: flex;
+                justify-content: center;
+
+                img{
+                    height: 100%;
+                    width: auto;
+                }
+            }
+
+
+
+
+            .btn{
+                display: flex;
+            }
+        }
+    }
+}
+
+//Стили для блоков СО СЛАЙДЕРОМ С ТОВАРАМИ с шириной экрана 588px и ниже
+
+@media(max-width: 588px){
+    .products{
+        &__item{
+            padding: 0;
+
+
+            &-status{
+                left: 0;
+            }
+
+            .btn{
+                bottom: -45px;
+            }
+        }
+
+        &-prev, &-next{
+            width: 30px;
+            height: 160px;
+        }
+
+        &-next{
+            right: -15px;
+        }
+
+        &-prev{
+            left: -15px;
+        }
+    }
+}

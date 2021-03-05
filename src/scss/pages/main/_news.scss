@@ -1,0 +1,129 @@
+//Стили для блока ПОЛЕЗНЫЕ СТАТЬИ
+
+.news{
+    padding: 77px 0 69px;
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__box{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 50px;
+
+        &__item{
+            width: 48%;
+            height: 345px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: $item-padding;
+            &-content{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                padding: 0 60px;
+
+                &.white{
+                    background: rgba(255, 255, 255, .9);
+
+                    & > *{
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+
+    &-title{
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1.25;
+        letter-spacing: 0.6px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #ffffff;
+        margin-bottom: 30px;
+        
+    }
+
+    .link-more{
+        margin-top: 60px;
+    }
+}
+
+//Стили для блока ПОЛЕЗНЫЕ СТАТЬИ с шириной экрана 1440px и ниже
+
+@media(max-width: 1440px){
+    .news{
+        padding: 57px 0;
+        &__box{
+            &__item{
+                height: 315px;
+                &-content{
+                    padding: 0 40px;
+                }
+            }
+        }
+
+        &-title{
+            font-size: 20px;
+        }
+    }
+}
+
+//Стили для блока ПОЛЕЗНЫЕ СТАТЬИ с шириной экрана 1092px и ниже
+
+@media(max-width: 1092px){
+    .news{
+        &__box{
+            &__item{
+                height: 275px;
+            }
+        }
+        &-title{
+            font-size: 16px;
+        }
+    }
+}
+
+//Стили для блока ПОЛЕЗНЫЕ СТАТЬИ с шириной экрана 768px и ниже
+
+@media(max-width: 768px){
+    .news{
+        &__box{
+            flex-direction: column;
+            &__item{
+                height: 245px;
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+        &-title{
+            margin-bottom: 20px;
+        }
+
+        .link-more{
+            margin-top: 20px;
+        }
+    }
+}
+
+//Стили для блока ПОЛЕЗНЫЕ СТАТЬИ с шириной экрана 588px и ниже
+
+@media(max-width: 588px){
+    .news{
+        &__box{
+            &__item{
+                padding: 15px;
+            }
+        }
+    }
+}

@@ -1,0 +1,91 @@
+//Общие стили
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Circe';
+    box-sizing: border-box;
+    color: #000;
+}
+
+body{
+    background-color: #f8f8f8;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+input, textarea, button{
+    border: none;
+    outline: none;
+
+    &:focus{
+        border: none;
+        outline: none;
+    }
+}
+
+.swiper{
+    &-button{
+        &-prev, &-next{
+            margin-top: 0;
+
+            &:after{
+                display: none;
+            }
+        }
+    }
+}
+
+//Стили для конейнера Bootstrap
+
+@media(max-width: 1920px){
+    .container{
+        max-width: 1192px;
+        padding: 0;
+    }
+}
+@media(max-width: 1440px){
+    .container{
+        max-width: 992px;
+        padding: 0;
+    }
+}
+@media(max-width: 1092px){
+    .container{
+        max-width: 768px;
+        padding: 0;
+    }
+}
+@media(max-width: 768px){
+    .container{
+        max-width: 588px;
+        padding: 0;
+    }
+}
+
+@media(max-width: 588px){
+    .container{
+        max-width: 588px;
+        padding: 0;
+    }
+}
+
+//Файлы с общими стилями
+@import './vars/index';
+@import './titles-btns/index';
+
+
+//Файлы со стилями страниц
+
+@import './navs/index';
+@import './pages/index';
+
+//Модификаторы
+
+@import './mods';

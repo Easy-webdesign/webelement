@@ -1,0 +1,432 @@
+//Стили для ШАПКИ
+
+.header{
+    position: relative;
+    padding-top: 25px;
+
+    .container{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+    }
+
+    &__mob{
+        display: none;
+    }
+
+    &__box{
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        padding: 23px 30px;
+        background: #fff;
+
+        &.footer{
+            width: 100%;
+            padding: 0;
+            background: #f8f8f8;
+        }
+        
+        img{
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        p{
+            text-transform: uppercase;
+            letter-spacing: 2.2px;
+            color: #848484;
+            font-size: 11px;
+        }
+    }
+
+    &__navbar{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &-top, &-bottom{
+            height: 56px;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        &-top{
+            width: 100%;
+            padding-right: 80px;
+            justify-content: space-between;
+            li{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                a{
+                    font-size: 15px;
+                    line-height: 15px;
+                    color: #ffffff;
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        &-bottom{
+            height: 59px;
+            justify-content: space-between;
+            background: #fff;
+        }
+
+        &-list{
+            display: flex;
+            
+            li{
+                margin-right: 20px;
+                a{
+                    font-weight: 700;
+                    font-size: 14px;
+                    letter-spacing: 1.82px;
+                    color: #000000;
+                }
+
+                &:nth-last-child(1){
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &-btns{
+            display: flex;
+
+            .btn-ul{
+                margin-right: 6px;
+            }
+        }
+    }
+
+    &-num{
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+
+        img{
+            margin-right: 5px;
+        }
+        a{
+            font-size: 15px;
+            font-weight: 400;
+            text-align: right;
+        }
+    }
+
+    &-bg{
+        position: absolute;
+        width: 100%;
+        height: 81px;
+        top: 0;
+        left: 0;
+        background: radial-gradient(circle, #385382 0%, #223251  100%);
+        z-index: 1;
+    }
+}
+
+//Стили для ШАПКИ с шириной экрана 1440px и ниже
+
+@media(max-width: 1440px){
+    .header{
+        &__navbar{
+            &-top{
+                // padding-left: 20px;
+                padding-right: 15px;
+
+                li{
+                    a{
+                        margin-left: 5px;
+                        
+                    }
+                }
+            }
+
+            .btn-ul.btn-ul-red{
+                display: none;
+            }
+
+            &-bottom{
+                height: 50px;
+                // padding-left: 20px;
+                // padding-right: 0;
+            }
+
+            &-list{
+                li{
+                    margin-right: 15px;
+                    a{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        &__logo{
+            p{
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+//Стили для ШАПКИ с шириной экрана 1092px и ниже
+
+@media(max-width: 1092px){
+    .header{
+        display: none;
+
+        &__mob{
+            position: fixed;
+            display: block;
+            top: 0;
+            left: 0;
+            right: 0;
+            
+            z-index: 200;
+            .gamb{
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+                height: 30px;
+                top: 50%;
+                right: 20px;
+                transform: translateY(-50%);
+                z-index: 60;
+                cursor: pointer;
+
+                span{
+                    display: block;
+                    height: 3px;
+                    width: 100%;
+                    margin: 3px 0;
+                    background: #000;
+                    transition: .2s all;
+                }
+
+                &.active{
+                    span{
+                        position: absolute;
+                        top: 9px;
+                        transform: rotateZ(45deg);
+
+                        &:nth-last-child(1){
+                            transform: rotateZ(-45deg);
+                        }
+                    }
+                }
+            }
+
+            &__navbar{
+                position: absolute;
+                top: 55px;
+                left: 0;
+                right: 0;
+                background: #fff;
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+                z-index: 49;
+                transition: .2s all;
+
+                ul{
+                    padding-right: 30px;
+                }
+
+                &.hide{
+                    top: 0;
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
+                }
+
+                .header-num{
+                    display: none;
+                }
+            }
+        }
+
+        &__box{
+            position: relative;
+            background: #fff;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+            z-index: 50;
+        }
+
+        &__logo{
+            width: 175px;
+            padding: 8px 23px;
+
+
+            img{
+                width: 80%;
+                margin-bottom: 5px;
+            }
+
+            p{
+                font-size: 9px;
+            }
+
+            &.footer{
+                width: 20%;
+                padding: 0;
+                background: #f8f8f8;
+            }
+        }
+
+        &__navbar{
+            &-top{
+                li{
+                    a{
+                        color: #000;
+                    }
+                }
+            }
+            &-bottom{
+                padding: 0 80px 0 20px;
+                
+            }
+            position: relative;
+            z-index: 50;
+        }
+
+        &-bg{
+            display: none;
+        }
+    }
+}
+
+//Стили для ШАПКИ с шириной экрана 768px и ниже
+
+@media(max-width: 768px){
+    .header{
+        
+
+        &__logo{
+            padding: 8px 20px;
+
+            &.footer{
+                width: 25%;
+            }
+        }
+
+        &__navbar{
+            &-list{
+                display: none;
+            }
+
+            &-bottom{
+                justify-content: flex-end;
+                
+            }
+
+
+        }
+
+        &__mob{
+            &__navbar{
+                height: 80px;
+                padding: 10px 0;
+                ul{
+                    height: 100%;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    align-items: baseline;
+                    justify-content: flex-start;
+
+                    li{
+                        height: 24px;
+                        margin-right: 15px;
+                        margin-bottom: 5px;
+                    }
+                }
+
+                
+
+                &.hide{
+                    top: -23px;
+                }
+            }
+        }
+    }
+}
+
+//Стили для ШАПКИ с шириной экрана 588px и ниже
+
+@media(max-width: 588px){
+    .header{
+        &__mob{
+            &__navbar{
+                height: 120px;
+                padding: 15px 0;
+                ul{
+                    height: 100%;
+                }
+
+                
+
+                &.hide{
+                    top: -90px;
+                }
+            }
+        }
+
+        &__logo{
+            padding: 8px 17px;
+
+            p{
+                font-size: 8px;
+            }
+
+            &.footer{
+                width: 116px;
+            }
+        }
+    }
+}
+
+//Стили для ШАПКИ с шириной экрана 480px и ниже
+
+@media(max-width: 480px){
+    .header{
+        &__mob{
+            &__navbar{
+                height: 260px;
+                top: 53px;
+
+                ul{
+                    height: 84%;
+                }
+
+                .header-num{
+                    display: block;
+                    margin-left: 30px;
+                }
+
+                &.hide{
+                    top: -205px;
+                }
+            }
+        }
+
+        &__logo{
+            width: 205px;
+        }
+
+        &__navbar{
+            &-bottom{
+                display: none;
+            }
+        }
+    }
+}

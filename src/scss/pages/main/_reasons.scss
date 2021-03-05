@@ -1,0 +1,89 @@
+//Стили для блока ПРЕИМУЩЕСТВ
+
+.reasons{
+    padding: 45px 0;
+    background: #fff;
+
+    &__box{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        &__item{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 235px;
+            padding: 0 15px;
+        }
+    }
+
+    &-title{
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.67;
+        letter-spacing: 2.4px;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 0 10px;
+    }
+
+    &-descr{
+        font-size: 15px;
+        line-height: 1.2;
+        letter-spacing: 0.23px;
+        text-align: center;
+    }
+
+    &-img{
+        height: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // margin-bottom: 12px;
+    }
+}
+
+//Стили для блока ПРЕИМУЩЕСТВ с шириной экрана 1440px и ниже
+
+@media(max-width: 1440px){
+    .reasons{
+        &__box{
+            &__item{
+                width: 200px;
+            }
+        }
+
+        &-descr{
+            font-size: 13px;
+        }
+    }
+}
+
+//Стили для блока ПРЕИМУЩЕСТВ с шириной экрана 1092px и ниже
+
+@media(max-width: 1092px){
+    .reasons{
+        &__box{
+            flex-wrap: wrap;
+            justify-content: center;
+
+            &__item{
+                margin: 0 20px 20px;
+            }
+        }
+    }
+}
+
+//Стили для блока ПРЕИМУЩЕСТВ с шириной экрана 768px и ниже
+
+@media(max-width: 768px){}
+
+//Стили для блока ПРЕИМУЩЕСТВ с шириной экрана 588px и ниже
+
+@media(max-width: 588px){}
